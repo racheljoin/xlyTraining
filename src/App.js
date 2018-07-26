@@ -1,9 +1,14 @@
-import React from 'react';
-import Todo from './container/Todo';
-import './App.css';
+import React from 'react'
+import 'antd/dist/antd.css';
+
+import Test from './containers/Test';
 
 export default class App extends React.Component {
   render() {
-    return <Todo />
+    return (
+      <div>
+        <Test />
+      </div>
+    );
   }
 }
