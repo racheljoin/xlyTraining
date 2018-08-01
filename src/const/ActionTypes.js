@@ -1,1 +1,5 @@
 export const FETCH_GITHUB_USER = 'FETCH_GITHUB_USER';
+
+export const FETCH_USER_INFO = 'FETCH_USER_INFO';
+export const FETCH_LESSON_INFO = 'FETCH_LESSON_INFO';
+export const ADD_TODO = 'ADD_TODO';

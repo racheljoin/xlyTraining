@@ -7,8 +7,14 @@ export function fetchGithubUser(userName, next) {
   });
 
   axios({
-    method: 'GET',
-    url: `https://api.github.com/users/${userName}`
+    method: 'POST',
+    url: 'http://xly-wkop.xiaoniangao.cn/getUserInfo',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    data: {
+      mid: 111
+    }
   }).then(res => {
     console.log(res);
     next({

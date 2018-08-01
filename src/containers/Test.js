@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Button } from 'antd';
-import * as api from '../api';
-
 import * as actionCreators from '../actions';
 
 class Test extends React.Component {
@@ -19,9 +17,13 @@ class Test extends React.Component {
 
   handleButtonClick = () => {
     const { inputVal } = this.state;
-    const { dispatch } = this.props;
-    // Actions.fetchGithubUser(inputVal, dispatch);
-    api.fetchGithubUser(inputVal, dispatch);
+    const { Actions } = this.props;
+    // Actions.fetchUserInfo(inputVal);
+    Actions.fetchLessonInfo(inputVal);
+  }
+
+  handleAdd = () => {
+    this.props.Actions.addTodo();
   }
 
   render() {
@@ -30,6 +32,7 @@ class Test extends React.Component {
       <div>
         <input value={this.state.inputVal} onChange={this.handleInputChange} />
         <Button type="primary" onClick={this.handleButtonClick}>{`请求拉取${this.state.inputVal}`}</Button>
+        <Button type="primary" onClick={this.handleAdd}>add</Button>
         <div>
           <img src={this.state.avatar} />
         </div>
@@ -47,8 +50,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    // Actions: bindActionCreators(actionCreators, dispatch),
-    dispatch
+    Actions: bindActionCreators(actionCreators, dispatch)
+    // dispatch
   }
 }
 
