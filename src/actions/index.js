@@ -1,5 +1,6 @@
-import axios from 'axios';
+import { normalize } from 'normalizr';
 import * as ActionTypes from '../const/ActionTypes';
+import Schema from '../schema';
 
 export function fetchUserInfo(mid) {
   return {
@@ -13,6 +14,13 @@ export function fetchUserInfo(mid) {
   }
 }
 
+export function changeLessonName(id) {
+  return {
+    type: ActionTypes.CHANGE_LESSON_NAME,
+    id
+  }
+}
+
 export function fetchLessonInfo(mid) {
   return {
     SERVER_API: {
@@ -20,6 +28,12 @@ export function fetchLessonInfo(mid) {
       endpoint: '/getLessonInfo',
       params: {
         mid
+      },
+      normalizeFuc: json => {
+        return {
+          current: normalize(json.currentLessonsList, Schema.lessonListSchema),
+          history: normalize(json.historyLessonsList, Schema.lessonListSchema)
+        };
       }
     }
   }

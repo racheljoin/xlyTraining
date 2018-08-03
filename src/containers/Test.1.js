@@ -33,33 +33,17 @@ class Test extends React.Component {
     this.props.router.push('about');
   }
 
-  handleLessonClick = id => {
-    console.log(id);
-    this.props.Actions.changeLessonName(id);
-  }
-
-  _renderLessons = list => {
-    return list.map(lesson => (
-      <div key={lesson.id} onClick={() => this.handleLessonClick(lesson.id)}>
-        {lesson.classInfo.id}
-        <div>
-          {lesson.beCommenttedRate}
-        </div>
-      </div>
-    ));
-  }
-
   render() {
-    const { currentLessonList, historyLessonList } = this.props;
     return (
       <div>
+        <input value={this.state.inputVal} onChange={this.handleInputChange} />
+        <Button type="primary" onClick={this.handleButtonClick}>{`请求拉取${this.state.inputVal}`}</Button>
+        <Button type="primary" onClick={this.handleAdd}>add</Button>
         <div>
-          当前课程
-          {this._renderLessons(currentLessonList)}
+          <img src={this.state.avatar} alt="" />
         </div>
         <div>
-          历史课程
-          {this._renderLessons(historyLessonList)}
+          <Button onClick={this.goAbout}>go to about</Button>
         </div>
       </div>
     );
@@ -68,11 +52,8 @@ class Test extends React.Component {
 
 const mapStateToProps = state => {
   const { lessons } = state;
-  const currentLessonList = lessons.currentLessonIds.map(id => lessons.lessonEntities[id]);
-  const historyLessonList = lessons.historyLessonIds.map(id => lessons.lessonEntities[id]);
   return {
-    currentLessonList,
-    historyLessonList
+    lessons
   }
 }
 

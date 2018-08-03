@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import todos from './todos';
+import lessons from './lessons';
 
 export default combineReducers({
-  todos
+  lessons
 })
