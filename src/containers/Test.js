@@ -1,86 +1,62 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as actionCreators from '../actions';
+import ActionSheet from '../components/weui/ActionSheet';
 
-class Test extends React.Component {
+export default class DemoExample extends React.Component {
   state = {
-    inputVal: ''
+    isActionSheetActive: false,
+    title: '',
+    menus: []
   };
 
-  componentDidMount() {
-    this.props.Actions.fetchLessonInfo(1000);
-  }
-
-  handleInputChange = e => {
+  handleShowActionSheet = () => {
     this.setState({
-      inputVal: e.target.value
+      isActionSheetActive: true,
+      title: '这是一个标题',
+      menus: [{
+        title: '示例菜单1',
+        click: () => console.log('示例菜单1')
+      }, {
+        title: '示例菜单2',
+        click: () => console.log('示例菜单2')
+      }]
     });
   }
 
-  handleButtonClick = () => {
-    const { inputVal } = this.state;
-    const { Actions } = this.props;
-    // Actions.fetchUserInfo(inputVal);
-    Actions.fetchLessonInfo(inputVal);
+  handleShowActionSheet2 = () => {
+    this.setState({
+      isActionSheetActive: true,
+      title: '这是一个标题2',
+      menus: [{
+        title: '示例菜单33',
+        type: 'danger',
+        click: () => console.log('示例菜单33')
+      }, {
+        title: '示例菜44',
+        click: () => console.log('示例菜44')
+      }]
+    });
   }
 
-  handleAdd = () => {
-    this.props.Actions.addTodo();
-  }
-
-  goAbout = () => {
-    this.props.router.push('about');
-  }
-
-  handleLessonClick = id => {
-    console.log(id);
-    this.props.Actions.changeLessonName(id);
-  }
-
-  _renderLessons = list => {
-    return list.map(lesson => (
-      <div key={lesson.id} onClick={() => this.handleLessonClick(lesson.id)}>
-        {lesson.classInfo.id}
-        <div>
-          {lesson.beCommenttedRate}
-        </div>
-      </div>
-    ));
+  handleHideActionSheet = () => {
+    this.setState({
+      isActionSheetActive: false
+    });
   }
 
   render() {
-    const { currentLessonList, historyLessonList } = this.props;
     return (
       <div>
-        <div>
-          当前课程
-          {this._renderLessons(currentLessonList)}
-        </div>
-        <div>
-          历史课程
-          {this._renderLessons(historyLessonList)}
-        </div>
+        <div onClick={this.handleShowActionSheet}>ios actionsheet</div>
+
+        <div onClick={this.handleShowActionSheet2}>ios actionsheet2</div>
+
+        <ActionSheet
+          isActive={this.state.isActionSheetActive}
+          title={this.state.title}
+          menus={this.state.menus}
+          onCancel={this.handleHideActionSheet}
+        />
       </div>
     );
-  }
 }
-
-const mapStateToProps = state => {
-  const { lessons } = state;
-  const currentLessonList = lessons.currentLessonIds.map(id => lessons.lessonEntities[id]);
-  const historyLessonList = lessons.historyLessonIds.map(id => lessons.lessonEntities[id]);
-  return {
-    currentLessonList,
-    historyLessonList
-  }
 }
-
-const mapDispatchToProps = dispatch => {
-  return {
-    Actions: bindActionCreators(actionCreators, dispatch)
-    // dispatch
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Test)
