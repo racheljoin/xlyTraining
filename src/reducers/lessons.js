@@ -16,8 +16,8 @@ export default function lessons(state = {
           ...action.response.history.entities.lesson
         },
         currentLessonIds: action.response.current.result,
-        historyLessonIds: action.response.history.result,
-      }
+        historyLessonIds: action.response.history.result
+      };
     case ActionTypes.CHANGE_LESSON_NAME: {
       // const _lessonEntities = { ...state.lessonEntities };
 
@@ -29,12 +29,12 @@ export default function lessons(state = {
       //   ...state,
       //   lessonEntities: _lessonEntities
       // }
-      const _curIds = state.currentLessonIds;
-      _curIds.shift();
+      const curIds = state.currentLessonIds;
+      curIds.shift();
       return {
         ...state,
-        currentLessonIds: _curIds
-      }
+        currentLessonIds: curIds
+      };
     }
     default:
       return state;

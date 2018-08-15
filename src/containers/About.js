@@ -16,16 +16,15 @@ const userSchema = new schema.Entity('user', {}, { idAttribute: 'id' });
 const userListSchema = new schema.Array(userSchema);
 const norData = normalize(data, userListSchema);
 
+const About = () => {
+  const _data = norData.result.map(id => norData.entities.user[id]);
+  return (
+    <div>
+      {
+        _data.map(item => item.name)
+      }
+    </div>
+  );
+};
 
-export default class About extends React.Component {
-  render() {
-    const _data = norData.result.map(id => norData.entities.user[id]);
-    return (
-      <div>
-        {
-          _data.map(item => item.name)
-        }
-      </div>
-    );
-  }
-}
+export default About;

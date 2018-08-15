@@ -1,12 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
+// import { fetchLessonInfo } from '../actions';
 import ActionSheet from '../components/weui/ActionSheet';
 
-export default class DemoExample extends React.Component {
+class DemoExample extends React.Component {
   state = {
     isActionSheetActive: false,
     title: '',
     menus: []
   };
+
+  componentDidMount() {
+    // this.props.dispatch(fetchLessonInfo(123));
+  }
+
+  fetchxxxData() {
+
+  }
 
   handleShowActionSheet = () => {
     this.setState({
@@ -58,5 +68,7 @@ export default class DemoExample extends React.Component {
         />
       </div>
     );
+  }
 }
-}
+
+export default connect()(DemoExample);

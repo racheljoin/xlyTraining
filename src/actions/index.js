@@ -11,14 +11,14 @@ export function fetchUserInfo(mid) {
         mid
       }
     }
-  }
+  };
 }
 
 export function changeLessonName(id) {
   return {
     type: ActionTypes.CHANGE_LESSON_NAME,
     id
-  }
+  };
 }
 
 export function fetchLessonInfo(mid) {
@@ -29,20 +29,18 @@ export function fetchLessonInfo(mid) {
       params: {
         mid
       },
-      normalizeFuc: json => {
-        return {
-          current: normalize(json.currentLessonsList, Schema.lessonListSchema),
-          history: normalize(json.historyLessonsList, Schema.lessonListSchema)
-        };
-      }
+      normalizeFuc: json => ({
+        current: normalize(json.currentLessonsList, Schema.lessonListSchema),
+        history: normalize(json.historyLessonsList, Schema.lessonListSchema)
+      })
     }
-  }
+  };
 }
 
 export function addTodo() {
   return {
     type: ActionTypes.ADD_TODO
-  }
+  };
 }
 
 /* export function fetchLessonInfo(mid) {

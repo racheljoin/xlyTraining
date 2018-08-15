@@ -6,6 +6,10 @@ import configureStore from './store/configureStore';
 import registerServiceWorker from './registerServiceWorker';
 import AppRoutes from './routes';
 
+import test from './test';
+
+test();
+
 const store = configureStore();
 
 render(

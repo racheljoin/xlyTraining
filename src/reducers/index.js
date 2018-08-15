@@ -3,4 +3,4 @@ import lessons from './lessons';
 
 export default combineReducers({
   lessons
-})
+});
