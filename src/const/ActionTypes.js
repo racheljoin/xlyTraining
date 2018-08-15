@@ -1,7 +1,3 @@
-export const FETCH_GITHUB_USER = 'FETCH_GITHUB_USER';
+export const ADD = 'ADD';
 
-export const FETCH_USER_INFO = 'FETCH_USER_INFO';
-export const FETCH_LESSON_INFO = 'FETCH_LESSON_INFO';
-export const ADD_TODO = 'ADD_TODO';
-
-export const CHANGE_LESSON_NAME = 'CHANGE_LESSON_NAME';
+export const REMOVE = 'REMOVE';
