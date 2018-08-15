@@ -10,4 +10,4 @@ export function remove() {
   return {
     type: ActionTypes.REMOVE
   };
-};
+}
