@@ -30,6 +30,7 @@
       "allowShortCircuit": true
     }],
     "eqeqeq": ["off", "never"],
+    "prefer-destructuring":["off", "never"],
     "class-methods-use-this": 0,
     "react/jsx-filename-extension": ["error", {
       "extensions": [".js", ".jsx"]

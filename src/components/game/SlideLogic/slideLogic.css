@@ -1,0 +1,105 @@
+.gameView{
+    width: 100%;
+    height: 100%;
+}
+.gameBody{
+    background-color: bisque;
+    width: 800px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 800px;
+}
+.top span{
+    font-size: 50px;
+}
+.middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#explain{
+    font-size: 35px;
+}
+Tag{
+    width: 50px;
+    height: 30px;
+}
+.gameOver{
+    width: 500px;
+    height: 300px;
+    position: fixed;
+    left: 150px;
+    top: 250px;
+}
+.gener{
+    width: 194px;
+    height: 194px;
+    margin: 3px;
+    border-radius: 10px;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+}
+.zero{
+    background-color: aliceblue;
+}
+.two{
+    background-color: rgb(199, 239, 241);
+    text-align: center;
+    font-size: 100px;
+}
+.four{
+    background-color: rgb(149, 129, 224);
+    text-align: center;
+    font-size: 100px;
+}
+.eight{
+    background-color: rgb(14, 206, 231);
+    text-align: center;
+    font-size: 100px;
+}
+.sixteen{
+    background-color: rgb(208, 134, 214);
+    text-align: center;
+    font-size: 100px;
+}
+.thirty{
+    background-color: rgb(44, 236, 118);
+    text-align: center;
+    font-size: 100px;
+}
+.sixty{
+    background-color: rgb(216, 214, 96);
+    text-align: center;
+    font-size: 100px;
+}
+.twenteen{
+    background-color: rgb(125, 151, 63);
+    text-align: center;
+    font-size: 100px;
+}
+.twentyFive{
+    background-color: rgb(232, 241, 101);
+    text-align: center;
+    font-size: 100px;
+}
+.fifty{
+    background-color: rgb(231, 169, 34);
+    text-align: center;
+    font-size: 100px;
+}
+.oneThousand{
+    background-color: rgb(233, 95, 16);
+    text-align: center;
+    font-size: 100px;
+}
+.twoThousand{
+    background-color: rgb(248, 10, 10);
+    text-align: center;
+    font-size: 100px;
+}

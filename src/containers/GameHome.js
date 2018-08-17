@@ -1,11 +1,16 @@
 import React from 'react';
+import './gameHome.css';
+import SlideLogic from '../components/game/SlideLogic';
 
 export default class GameHome extends React.Component {
   state = {
-
   };
 
   render() {
-    return <div>game 2048</div>;
+    return (
+      <div className="allPage">
+        <SlideLogic />
+      </div>
+    );
   }
 }

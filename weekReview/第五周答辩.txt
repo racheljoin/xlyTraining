@@ -1,0 +1,12 @@
+1、数据结构：
+  了解了一下线性结构的数组、队列、栈等；比较难的一些树的算法；散列表。
+
+2、中间层框架：express
+
+3、命名、代码规范：
+  事件处理用handle...; 抓取数据用fetch...Data; 数组以-s结尾; bool值命名以状态值; 组件命名最好见名知意,等。
+  代码规范的插件eslint，配置devDependencis;
+
+4、github的一些简单概念。
+
+5、applyMiddleware与Reudx-Thunk相似之处。
