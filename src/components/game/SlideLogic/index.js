@@ -7,10 +7,10 @@ export default class SlideLogic extends React.Component {
       score: 0,
       maxRecord: 0,
       gameOver: false,
-      // viewValues: [[-1, -1, -1, -1], [-1, -1, -1, -1], [-1, -1, -1, -1], [-1, -1, -1, -1]],
-      // rows: 4
-      viewValues: [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]],
-      rows: 3
+      viewValues: [[-1, -1, -1, -1], [-1, -1, -1, -1], [-1, -1, -1, -1], [-1, -1, -1, -1]],
+      rows: 4
+      // viewValues: [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]],
+      // rows: 3
     };
     componentWillMount() {
       this.reStart();
